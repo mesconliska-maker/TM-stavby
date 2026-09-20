@@ -1,11 +1,33 @@
 import { useState } from 'react'
 
-const HERO_IMG = 'https://images.unsplash.com/photo-1503708928676-1cb796a0891e?w=1600&h=900&fit=crop&auto=format'
-const RIVERBED_IMG = 'https://images.unsplash.com/photo-1787328965673-aa607f0dc09c?w=1200&h=700&fit=crop&auto=format'
-const DEMOLITION_IMG = 'https://images.unsplash.com/photo-1677588508537-5106322c2d40?w=800&h=600&fit=crop&auto=format'
-const EXCAVATOR_IMG = 'https://images.unsplash.com/photo-1575281923032-f40d94ef6160?w=800&h=600&fit=crop&auto=format'
-const TRENCH_IMG = 'https://images.unsplash.com/photo-1565364507085-325347bae748?w=800&h=600&fit=crop&auto=format'
-const QUARRY_IMG = 'https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?w=800&h=600&fit=crop&auto=format'
+const HERO_IMG = '/fotky/hero-menzi-muck-jizera.jpg'
+const RIVERBED_IMG = '/fotky/koryto-cisteni-reky.jpg'
+const ABOUT_IMG = '/fotky/o-mne-tomas-martinec-technika.jpg'
+const CONTACT_EMAIL = 'tmstavby@seznam.cz'
+const ADDRESS_QUERY = 'Na+V%C3%A1pence+765,+468+22+%C5%BDelezn%C3%BD+Brod'
+const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${ADDRESS_QUERY}`
+const MAPS_EMBED = `https://www.google.com/maps?q=${ADDRESS_QUERY}&z=14&output=embed`
+
+const machines = [
+  {
+    img: '/fotky/technika-menzi-muck-a61.jpg',
+    name: 'Menzi Muck A61',
+    type: 'Kráčivé rypadlo',
+    desc: 'Rypadlo pro svahy, koryta řek a místa, kam se běžná technika nedostane. Pracuje ve vodě, na strmém svahu i v úzkém profilu.',
+  },
+  {
+    img: '/fotky/technika-sany-sy50u.jpg',
+    name: 'Sany SY50U',
+    type: 'Minirypadlo',
+    desc: 'Kompaktní pásové minirypadlo pro výkopy základů, přípojek a inženýrských sítí i ve stísněných prostorech u domu.',
+  },
+  {
+    img: '/fotky/technika-freza-na-skalu.jpg',
+    name: 'Skalní fréza a drapák',
+    type: 'Příslušenství',
+    desc: 'Frézování skály a betonu bez trhacích prací, drapák na skládání kamenných zdí a manipulaci s kamenem.',
+  },
+]
 
 const jobs = [
   'Vykopat rýhu pro kabely',
@@ -82,13 +104,50 @@ const services = [
 ]
 
 const galleryItems = [
-  { img: EXCAVATOR_IMG, caption: 'Zemní práce — výkop pro přípojky' },
-  { img: RIVERBED_IMG, caption: 'Vybírání koryta — kanál ve městě' },
-  { img: DEMOLITION_IMG, caption: 'Demolice budovy' },
-  { img: TRENCH_IMG, caption: 'Pokládka potrubí a inženýrských sítí' },
-  { img: QUARRY_IMG, caption: 'Zemní práce v těžkém terénu' },
-  { img: HERO_IMG, caption: 'Minirypadlo na výkopech' },
+  { img: '/fotky/realizace-cisteni-koryta-reky.jpg', caption: 'Čištění koryta řeky' },
+  { img: '/fotky/realizace-kamenna-operna-zed.jpg', caption: 'Kamenná opěrná zeď' },
+  { img: '/fotky/realizace-vykop-site-podel-silnice.jpg', caption: 'Výkop pro inženýrské sítě podél silnice' },
+  { img: '/fotky/realizace-cisteni-rybnika.jpg', caption: 'Odbahnění rybníka' },
+  { img: '/fotky/realizace-skladana-kamenna-zed.jpg', caption: 'Skládaná kamenná zeď u cesty' },
+  { img: '/fotky/realizace-frezovani-skaly.jpg', caption: 'Frézování skály v příkopu' },
+  { img: '/fotky/realizace-svah-nad-silnici.jpg', caption: 'Terénní úpravy svahu nad silnicí' },
+  { img: '/fotky/realizace-operna-zed-bloky.jpg', caption: 'Opěrná zeď z kamenných bloků' },
+  { img: '/fotky/realizace-pokladka-potrubi.jpg', caption: 'Pokládka potrubí' },
+  { img: '/fotky/realizace-vycistene-koryto-potoka.jpg', caption: 'Vyčištěné koryto potoka' },
+  { img: '/fotky/realizace-zajisteni-svahu.jpg', caption: 'Zajištění svahu' },
+  { img: '/fotky/realizace-nakladka-zeminy.jpg', caption: 'Nakládka zeminy' },
+  { img: '/fotky/realizace-kamenna-zed-drapak.jpg', caption: 'Stavba kamenné zdi drapákem' },
+  { img: '/fotky/realizace-uprava-brehu.jpg', caption: 'Úprava břehu' },
+  { img: '/fotky/technika-menzi-muck-a61-svah.jpg', caption: 'Menzi Muck na svahu' },
 ]
+
+/** Brand mark: excavator over water — earth and river work from one firm. Same geometry as /public/logo-mark.svg. */
+function LogoMark({ size = 36 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden="true" style={{ display: 'block', flexShrink: 0 }}>
+      <rect width="64" height="64" rx="14" fill="#C4762E" />
+      <rect x="12" y="38" width="24" height="8" rx="4" fill="#F4F2E9" />
+      <rect x="14" y="27" width="14" height="12" rx="2" fill="#F4F2E9" />
+      <path d="M25 31 L37 15 L49 27" fill="none" stroke="#201F19" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M45 26 L56 26 L53 37 L44 35 Z" fill="#201F19" />
+      <path d="M10 54 Q16 50 22 54 T34 54 T46 54 T58 54" fill="none" stroke="#201F19" strokeWidth="3" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function Logo({ size = 38 }: { size?: number }) {
+  return (
+    <span className="inline-flex items-center" style={{ gap: Math.round(size * 0.3) }}>
+      <LogoMark size={size} />
+      <span className="flex flex-col leading-none" style={{ fontFamily: 'Archivo, sans-serif' }}>
+        <span className="font-black tracking-tight" style={{ color: '#EFEDE4', fontSize: size * 0.5, letterSpacing: '-0.01em' }}>
+          TM <span style={{ color: '#C4762E' }}>STAVBY</span>
+        </span>
+        <span className="font-medium tracking-wide" style={{ color: '#EFEDE499', fontSize: size * 0.3, marginTop: 3 }}>Tomáš Martinec</span>
+      </span>
+    </span>
+  )
+}
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -98,6 +157,9 @@ export default function App() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    const subject = `Poptávka z webu – ${form.jmeno}`
+    const body = [`Jméno: ${form.jmeno}`, `Telefon: ${form.telefon}`, '', 'Popis zakázky:', form.popis].join('\n')
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     setSent(true)
   }
 
@@ -107,10 +169,9 @@ export default function App() {
       {/* HEADER */}
       <header className="fixed top-0 left-0 right-0 z-50" style={{ background: '#201F19ee', backdropFilter: 'blur(8px)', borderBottom: '1px solid #EFEDE411' }}>
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-          {/* Wordmark */}
-          <a href="#" className="flex flex-col leading-none" style={{ fontFamily: 'Archivo, sans-serif' }}>
-            <span className="font-black text-lg tracking-tight" style={{ color: '#EFEDE4' }}>TM Stavby</span>
-            <span className="text-xs font-medium tracking-wide" style={{ color: '#C4762E' }}>Tomáš Martinec</span>
+          {/* Logo */}
+          <a href="#" aria-label="TM Stavby – domů">
+            <Logo />
           </a>
 
           {/* Desktop nav */}
@@ -118,6 +179,7 @@ export default function App() {
             {[
               ['Zemní práce', '#sluzby'],
               ['Koryta řek', '#reka'],
+              ['Technika', '#technika'],
               ['O mně', '#o-mne'],
               ['Kontakt', '#kontakt'],
             ].map(([label, href]) => (
@@ -148,7 +210,7 @@ export default function App() {
         {/* Mobile menu */}
         {menuOpen && (
           <div className="md:hidden px-6 pb-6 pt-2 flex flex-col gap-4" style={{ background: '#201F19' }}>
-            {[['Zemní práce', '#sluzby'], ['Koryta řek', '#reka'], ['O mně', '#o-mne'], ['Kontakt', '#kontakt']].map(([l, h]) => (
+            {[['Zemní práce', '#sluzby'], ['Koryta řek', '#reka'], ['Technika', '#technika'], ['O mně', '#o-mne'], ['Kontakt', '#kontakt']].map(([l, h]) => (
               <a key={h} href={h} onClick={() => setMenuOpen(false)} className="text-base font-medium" style={{ color: '#EFEDE4' }}>{l}</a>
             ))}
             <a href="tel:777628803" className="text-base font-semibold" style={{ color: '#C4762E' }}>777 628 803</a>
@@ -164,8 +226,8 @@ export default function App() {
         <div className="absolute inset-0" style={{ background: '#201F19' }}>
           <img
             src={HERO_IMG}
-            alt="Zemní práce — rypadlo při práci"
-            className="w-full h-full object-cover opacity-35"
+            alt="Kráčivé rypadlo Menzi Muck při čištění koryta Jizery"
+            className="w-full h-full object-cover opacity-50"
           />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #201F19bb 0%, #201F1944 40%, #201F19cc 100%)' }} />
         </div>
@@ -214,7 +276,7 @@ export default function App() {
                   </svg>
                 ),
                 label: 'Nonstop dostupnost',
-                desc: 'Odpovídám na telefon i ve tři ráno. Havárie nečekají.',
+                desc: 'Havárie nečekají na ráno. Volejte kdykoliv, ozvu se co nejdřív.',
                 color: '#C4762E',
               },
               {
@@ -238,7 +300,7 @@ export default function App() {
                   </svg>
                 ),
                 label: 'Železný Brod a okolí Jizerských hor',
-                desc: 'Místní, vím terénu. Pokryju celý Liberecký kraj.',
+                desc: 'Jsem místní a terén znám. Pokrývám celý Liberecký kraj.',
                 color: '#C4762E',
               },
             ].map((item) => (
@@ -319,7 +381,7 @@ export default function App() {
               <div className="rounded-xl overflow-hidden" style={{ border: '2px solid #F4F2E930' }}>
                 <img
                   src={RIVERBED_IMG}
-                  alt="Vybírání koryta — rypadlo na pontonu"
+                  alt="Čištění koryta řeky kráčivým rypadlem Menzi Muck"
                   className="w-full object-cover"
                   style={{ height: 380 }}
                 />
@@ -369,7 +431,7 @@ export default function App() {
                 Prasklé potrubí v noci, podmáčený sklep před bouřkou, zaseknutá technika na stavbě — to jsou situace, kdy potřebujete někoho, kdo zvedne telefon. Já zvednu.
               </p>
               <p className="leading-relaxed" style={{ color: '#EFEDE4aa', fontSize: '1rem' }}>
-                Nonstop dostupnost není marketingová fráze. Je to způsob, jakým pracuji — potvrzený na více nezávislých zdrojích. Kdykoli zavoláte, budu vědět, zda a jak rychle se dostanu na místo.
+                Nonstop dostupnost není jen fráze. Kdykoli zavoláte, řeknu vám na rovinu, zda a jak rychle se dostanu na místo.
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -390,13 +452,41 @@ export default function App() {
         </div>
       </section>
 
+      {/* TECHNIKA */}
+      <section id="technika" style={{ background: '#161510' }}>
+        <div className="max-w-6xl mx-auto px-6 py-24">
+          <div className="eyebrow mb-4" style={{ color: '#C4762E' }}>MOJE TECHNIKA</div>
+          <h2 className="mb-4" style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 900, fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#EFEDE4', maxWidth: 700 }}>
+            Vlastní stroje,<br />
+            <span style={{ color: '#C4762E' }}>které se dostanou všude</span>
+          </h2>
+          <p className="mb-14 leading-relaxed" style={{ color: '#EFEDE4aa', maxWidth: 600, fontSize: '1.05rem' }}>
+            Kráčivé rypadlo do svahů a do vody, minirypadlo na výkopy u domu a příslušenství na skálu i kámen. Žádný pronájem, žádné čekání na cizí techniku.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {machines.map((m) => (
+              <div key={m.name} className="rounded-2xl overflow-hidden transition-all hover:-translate-y-1" style={{ background: '#201F19', border: '1px solid #C4762E30' }}>
+                <div style={{ aspectRatio: '4/3' }}>
+                  <img src={m.img} alt={`${m.name} – ${m.type}`} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <div className="p-6">
+                  <div className="text-xs uppercase tracking-widest font-semibold mb-2" style={{ color: '#C4762E', fontFamily: 'Archivo, sans-serif' }}>{m.type}</div>
+                  <h3 className="font-black text-xl mb-2" style={{ fontFamily: 'Archivo, sans-serif', color: '#EFEDE4' }}>{m.name}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: '#EFEDE4aa' }}>{m.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ABOUT */}
       <section id="o-mne" style={{ background: '#F4F2E9', color: '#1E1D17' }}>
         <div className="max-w-6xl mx-auto px-6 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative order-2 lg:order-1">
               <div className="rounded-2xl overflow-hidden" style={{ border: '3px solid #C4762E' }}>
-                <img src={QUARRY_IMG} alt="Tomáš Martinec při práci" className="w-full object-cover" style={{ height: 420 }} />
+                <img src={ABOUT_IMG} alt="Tomáš Martinec se svou technikou – Menzi Muck a Sany" className="w-full object-cover" style={{ height: 420 }} loading="lazy" />
                 <div className="absolute inset-0 rounded-2xl" style={{ background: 'linear-gradient(to top, #1E1D17aa 0%, transparent 60%)' }} />
               </div>
               <div className="absolute -bottom-5 -right-5 p-4 rounded-xl" style={{ background: '#201F19', border: '2px solid #C4762E' }}>
@@ -427,8 +517,8 @@ export default function App() {
                   </svg>
                   777 628 803
                 </a>
-                <a href="mailto:tmstavby@seznam.cz" className="flex items-center gap-2 px-6 py-3 rounded font-bold transition-all hover:bg-gray-200" style={{ background: '#1E1D1715', color: '#1E1D17', fontFamily: 'Archivo, sans-serif' }}>
-                  tmstavby@seznam.cz
+                <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-2 px-6 py-3 rounded font-bold transition-all hover:bg-gray-200" style={{ background: '#1E1D1715', color: '#1E1D17', fontFamily: 'Archivo, sans-serif' }}>
+                  {CONTACT_EMAIL}
                 </a>
               </div>
             </div>
@@ -452,10 +542,10 @@ export default function App() {
                 onMouseEnter={() => setHoveredGallery(i)}
                 onMouseLeave={() => setHoveredGallery(null)}
               >
-                <img src={item.img} alt={item.caption} className="w-full h-full object-cover transition-transform duration-500" style={{ transform: hoveredGallery === i ? 'scale(1.05)' : 'scale(1)' }} />
+                <img src={item.img} alt={item.caption} className="w-full h-full object-cover transition-transform duration-500" style={{ transform: hoveredGallery === i ? 'scale(1.05)' : 'scale(1)' }} loading="lazy" />
                 <div
                   className="absolute inset-0 flex items-end p-4 transition-opacity duration-300"
-                  style={{ background: 'linear-gradient(to top, #201F19dd, transparent)', opacity: hoveredGallery === i ? 1 : 0 }}
+                  style={{ background: 'linear-gradient(to top, #201F19dd, transparent 55%)', opacity: hoveredGallery === i ? 1 : 0.85 }}
                 >
                   <span className="text-sm font-semibold" style={{ color: '#EFEDE4', fontFamily: 'Archivo, sans-serif' }}>{item.caption}</span>
                 </div>
@@ -496,19 +586,33 @@ export default function App() {
               {/* Details */}
               <div className="space-y-4">
                 {[
-                  { label: 'E-mail', value: 'tmstavby@seznam.cz', href: 'mailto:tmstavby@seznam.cz' },
-                  { label: 'Adresa', value: 'Na Vápence 765\n468 22 Železný Brod', href: undefined },
-                  { label: 'Dostupnost', value: 'Nonstop — 24/7/365', href: undefined },
+                  { label: 'E-mail', value: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}`, external: false },
+                  { label: 'Adresa', value: 'Na Vápence 765\n468 22 Železný Brod', href: MAPS_LINK, external: true },
+                  { label: 'Dostupnost', value: 'Nonstop — 24/7/365', href: undefined, external: false },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4">
                     <div className="w-20 flex-shrink-0 text-xs uppercase font-semibold tracking-widest pt-0.5" style={{ color: '#1E1D1766', fontFamily: 'Archivo, sans-serif' }}>{item.label}</div>
                     {item.href ? (
-                      <a href={item.href} className="font-semibold hover:underline whitespace-pre-line" style={{ color: '#1E1D17' }}>{item.value}</a>
+                      <a href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noopener noreferrer' : undefined} className="font-semibold hover:underline whitespace-pre-line" style={{ color: '#1E1D17' }}>{item.value}</a>
                     ) : (
                       <span className="font-semibold whitespace-pre-line" style={{ color: '#1E1D17' }}>{item.value}</span>
                     )}
                   </div>
                 ))}
+              </div>
+
+              {/* Map */}
+              <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid #1E1D1720', height: 240 }}>
+                <iframe
+                  title="Mapa – Na Vápence 765, Železný Brod"
+                  src={MAPS_EMBED}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, display: 'block' }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
 
@@ -518,8 +622,14 @@ export default function App() {
                 <div className="h-full flex items-center justify-center p-12 rounded-2xl text-center" style={{ background: '#201F19' }}>
                   <div>
                     <div className="text-4xl mb-4">✓</div>
-                    <h3 className="font-black text-xl mb-2" style={{ fontFamily: 'Archivo, sans-serif', color: '#EFEDE4' }}>Zpráva odeslána</h3>
-                    <p style={{ color: '#EFEDE4aa' }}>Ozveme se co nejdříve.</p>
+                    <h3 className="font-black text-xl mb-3" style={{ fontFamily: 'Archivo, sans-serif', color: '#EFEDE4' }}>Poptávka připravena k odeslání</h3>
+                    <p className="leading-relaxed" style={{ color: '#EFEDE4aa' }}>
+                      Otevřel se váš e-mailový program s předvyplněnou zprávou – stačí ji odeslat.
+                      Pokud se nic neotevřelo, napište přímo na{' '}
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold" style={{ color: '#C4762E' }}>{CONTACT_EMAIL}</a>
+                      {' '}nebo zavolejte na{' '}
+                      <a href="tel:777628803" className="font-semibold" style={{ color: '#C4762E' }}>777 628 803</a>.
+                    </p>
                   </div>
                 </div>
               ) : (
@@ -577,12 +687,12 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-6 py-10">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <div className="font-black text-lg mb-1" style={{ fontFamily: 'Archivo, sans-serif' }}>TM Stavby — Tomáš Martinec</div>
+              <div className="mb-3"><Logo size={40} /></div>
               <div className="text-sm" style={{ color: '#EFEDE466' }}>IČ 46472002 &nbsp;·&nbsp; Na Vápence 765, 468 22 Železný Brod</div>
             </div>
             <div className="flex flex-col items-start md:items-end gap-1">
               <a href="tel:777628803" className="text-sm font-semibold hover:text-[#C4762E] transition-colors" style={{ color: '#EFEDE4' }}>777 628 803</a>
-              <a href="mailto:tmstavby@seznam.cz" className="text-sm hover:text-[#C4762E] transition-colors" style={{ color: '#EFEDE466' }}>tmstavby@seznam.cz</a>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm hover:text-[#C4762E] transition-colors" style={{ color: '#EFEDE466' }}>{CONTACT_EMAIL}</a>
             </div>
           </div>
           <div className="mt-8 pt-6 text-xs" style={{ borderTop: '1px solid #EFEDE40a', color: '#EFEDE433' }}>
