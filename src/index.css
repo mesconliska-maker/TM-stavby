@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-earth-dark: #201F19;
+  --color-earth-light: #F4F2E9;
+  --color-clay: #C4762E;
+  --color-teal: #2E6B7A;
+  --color-text-dark: #EFEDE4;
+  --color-text-light: #1E1D17;
+  --color-clay-dark: #A8621F;
+  --color-teal-dark: #245869;
+
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #201F19;
+  color: #EFEDE4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #C4762E44; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #C4762E88; }
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Section alternation */
+.section-dark {
+  background-color: #201F19;
+  color: #EFEDE4;
+}
+
+.section-light {
+  background-color: #F4F2E9;
+  color: #1E1D17;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Job phrase style */
+.job-phrase {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
