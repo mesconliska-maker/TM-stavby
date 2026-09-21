@@ -191,8 +191,8 @@ export default function App() {
 
           {/* CTA + phone */}
           <div className="hidden md:flex items-center gap-3">
-            <a href="tel:777628803" className="text-sm font-semibold tracking-wide transition-opacity hover:opacity-80" style={{ color: '#EFEDE4' }}>
-              777 628 803
+            <a href="tel:737846426" className="text-sm font-semibold tracking-wide transition-opacity hover:opacity-80" style={{ color: '#EFEDE4' }}>
+              737 846 426
             </a>
             <a href="#kontakt" className="px-4 py-2 rounded text-sm font-bold transition-all hover:brightness-110" style={{ background: '#C4762E', color: '#F4F2E9', fontFamily: 'Archivo, sans-serif' }}>
               Nezávazná poptávka
@@ -213,7 +213,7 @@ export default function App() {
             {[['Zemní práce', '#sluzby'], ['Koryta řek', '#reka'], ['Technika', '#technika'], ['O mně', '#o-mne'], ['Kontakt', '#kontakt']].map(([l, h]) => (
               <a key={h} href={h} onClick={() => setMenuOpen(false)} className="text-base font-medium" style={{ color: '#EFEDE4' }}>{l}</a>
             ))}
-            <a href="tel:777628803" className="text-base font-semibold" style={{ color: '#C4762E' }}>777 628 803</a>
+            <a href="tel:737846426" className="text-base font-semibold" style={{ color: '#C4762E' }}>737 846 426</a>
             <a href="#kontakt" onClick={() => setMenuOpen(false)} className="inline-block text-center px-6 py-3 rounded font-bold" style={{ background: '#C4762E', color: '#F4F2E9', fontFamily: 'Archivo, sans-serif' }}>
               Nezávazná poptávka
             </a>
@@ -248,8 +248,8 @@ export default function App() {
             <a href="#kontakt" className="px-8 py-4 rounded font-bold text-base transition-all hover:brightness-110 active:scale-95" style={{ background: '#C4762E', color: '#F4F2E9', fontFamily: 'Archivo, sans-serif' }}>
               Nezávazná poptávka
             </a>
-            <a href="tel:777628803" className="px-8 py-4 rounded font-bold text-base transition-all hover:bg-white/10 border" style={{ color: '#EFEDE4', borderColor: '#EFEDE444', fontFamily: 'Archivo, sans-serif' }}>
-              Zavolat: 777 628 803
+            <a href="tel:737846426" className="px-8 py-4 rounded font-bold text-base transition-all hover:bg-white/10 border" style={{ color: '#EFEDE4', borderColor: '#EFEDE444', fontFamily: 'Archivo, sans-serif' }}>
+              Zavolat: 737 846 426
             </a>
           </div>
         </div>
@@ -370,11 +370,11 @@ export default function App() {
               <p className="mb-8 leading-relaxed" style={{ color: '#F4F2E9bb', fontSize: '1rem' }}>
                 Železný Brod stojí přímo na Jizeře od roku 1352. Práce na vodních tocích tu není výjimka — je to každodenní realita.
               </p>
-              <a href="tel:777628803" className="inline-flex items-center gap-3 px-6 py-3 rounded font-bold transition-all hover:brightness-110" style={{ background: '#F4F2E9', color: '#2E6B7A', fontFamily: 'Archivo, sans-serif' }}>
+              <a href="tel:737846426" className="inline-flex items-center gap-3 px-6 py-3 rounded font-bold transition-all hover:brightness-110" style={{ background: '#F4F2E9', color: '#2E6B7A', fontFamily: 'Archivo, sans-serif' }}>
                 <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                777 628 803
+                737 846 426
               </a>
             </div>
             <div className="relative">
@@ -511,11 +511,11 @@ export default function App() {
                 </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href="tel:777628803" className="flex items-center gap-2 px-6 py-3 rounded font-bold transition-all hover:brightness-110" style={{ background: '#C4762E', color: '#F4F2E9', fontFamily: 'Archivo, sans-serif' }}>
+                <a href="tel:737846426" className="flex items-center gap-2 px-6 py-3 rounded font-bold transition-all hover:brightness-110" style={{ background: '#C4762E', color: '#F4F2E9', fontFamily: 'Archivo, sans-serif' }}>
                   <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                   </svg>
-                  777 628 803
+                  737 846 426
                 </a>
                 <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-2 px-6 py-3 rounded font-bold transition-all hover:bg-gray-200" style={{ background: '#1E1D1715', color: '#1E1D17', fontFamily: 'Archivo, sans-serif' }}>
                   {CONTACT_EMAIL}
@@ -571,7 +571,7 @@ export default function App() {
             {/* Contact info */}
             <div className="flex flex-col gap-8">
               {/* Big phone */}
-              <a href="tel:777628803" className="group flex items-center gap-4 p-6 rounded-2xl transition-all hover:brightness-105" style={{ background: '#C4762E' }}>
+              <a href="tel:737846426" className="group flex items-center gap-4 p-6 rounded-2xl transition-all hover:brightness-105" style={{ background: '#C4762E' }}>
                 <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: '#F4F2E930' }}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" className="w-6 h-6">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.7A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14l-.08 2.92z" />
@@ -579,7 +579,7 @@ export default function App() {
                 </div>
                 <div>
                   <div className="text-xs uppercase font-semibold tracking-widest mb-1" style={{ color: '#F4F2E9aa' }}>Zavolat</div>
-                  <div className="font-black text-2xl" style={{ fontFamily: 'Archivo, sans-serif', color: '#F4F2E9' }}>777 628 803</div>
+                  <div className="font-black text-2xl" style={{ fontFamily: 'Archivo, sans-serif', color: '#F4F2E9' }}>737 846 426</div>
                 </div>
               </a>
 
@@ -628,7 +628,7 @@ export default function App() {
                       Pokud se nic neotevřelo, napište přímo na{' '}
                       <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold" style={{ color: '#C4762E' }}>{CONTACT_EMAIL}</a>
                       {' '}nebo zavolejte na{' '}
-                      <a href="tel:777628803" className="font-semibold" style={{ color: '#C4762E' }}>777 628 803</a>.
+                      <a href="tel:737846426" className="font-semibold" style={{ color: '#C4762E' }}>737 846 426</a>.
                     </p>
                   </div>
                 </div>
@@ -691,7 +691,7 @@ export default function App() {
               <div className="text-sm" style={{ color: '#EFEDE466' }}>IČ 46472002 &nbsp;·&nbsp; Na Vápence 765, 468 22 Železný Brod</div>
             </div>
             <div className="flex flex-col items-start md:items-end gap-1">
-              <a href="tel:777628803" className="text-sm font-semibold hover:text-[#C4762E] transition-colors" style={{ color: '#EFEDE4' }}>777 628 803</a>
+              <a href="tel:737846426" className="text-sm font-semibold hover:text-[#C4762E] transition-colors" style={{ color: '#EFEDE4' }}>737 846 426</a>
               <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm hover:text-[#C4762E] transition-colors" style={{ color: '#EFEDE466' }}>{CONTACT_EMAIL}</a>
             </div>
           </div>
