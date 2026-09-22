@@ -12,6 +12,6 @@
     "icon": "/favicon.svg"
   },
   "openGraph": {
-    "image": "/og-image.png"
+    "image": "https://www.tmstavby-martinec.cz/og-image.png"
   }
 }
