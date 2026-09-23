@@ -163,6 +163,11 @@ const faqJsonLd = JSON.stringify({
   })),
 })
 
+/** srcset for /fotky/x.webp using the 800 px variant generated alongside it. */
+function srcSetFor(src: string) {
+  return `${src.replace('.webp', '-800.webp')} 800w, ${src} 1600w`
+}
+
 /** Brand mark: excavator over water — earth and river work from one firm. Same geometry as /public/logo-mark.svg. */
 function LogoMark({ size = 36 }: { size?: number }) {
   return (
@@ -269,6 +274,8 @@ export default function App() {
         <div className="absolute inset-0" style={{ background: '#201F19' }}>
           <img
             src={HERO_IMG}
+            srcSet={srcSetFor(HERO_IMG)}
+            sizes="100vw"
             alt="Kráčivé rypadlo Menzi Muck při čištění koryta Jizery v Železném Brodě"
             className="w-full h-full object-cover opacity-50"
             fetchPriority="high"
@@ -426,6 +433,9 @@ export default function App() {
               <div className="rounded-xl overflow-hidden" style={{ border: '2px solid #F4F2E930' }}>
                 <img
                   src={RIVERBED_IMG}
+                  srcSet={srcSetFor(RIVERBED_IMG)}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
                   alt="Čištění koryta řeky kráčivým rypadlem Menzi Muck"
                   className="w-full object-cover"
                   style={{ height: 380 }}
@@ -512,7 +522,7 @@ export default function App() {
             {machines.map((m) => (
               <div key={m.name} className="rounded-2xl overflow-hidden transition-all hover:-translate-y-1" style={{ background: '#201F19', border: '1px solid #C4762E30' }}>
                 <div style={{ aspectRatio: '4/3' }}>
-                  <img src={m.img} alt={`${m.name} – ${m.type}`} className="w-full h-full object-cover" loading="lazy" />
+                  <img src={m.img} srcSet={srcSetFor(m.img)} sizes="(max-width: 768px) 100vw, 33vw" alt={`${m.name} – ${m.type}`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <div className="p-6">
                   <div className="text-xs uppercase tracking-widest font-semibold mb-2" style={{ color: '#C4762E', fontFamily: 'Archivo, sans-serif' }}>{m.type}</div>
@@ -531,7 +541,7 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative order-2 lg:order-1">
               <div className="rounded-2xl overflow-hidden" style={{ border: '3px solid #C4762E' }}>
-                <img src={ABOUT_IMG} alt="Tomáš Martinec se svou technikou – Menzi Muck a Sany" className="w-full object-cover" style={{ height: 420 }} loading="lazy" />
+                <img src={ABOUT_IMG} srcSet={srcSetFor(ABOUT_IMG)} sizes="(max-width: 1024px) 100vw, 50vw" alt="Tomáš Martinec se svou technikou – Menzi Muck a Sany" className="w-full object-cover" style={{ height: 420 }} loading="lazy" decoding="async" />
                 <div className="absolute inset-0 rounded-2xl" style={{ background: 'linear-gradient(to top, #1E1D17aa 0%, transparent 60%)' }} />
               </div>
               <div className="absolute -bottom-5 -right-5 p-4 rounded-xl" style={{ background: '#201F19', border: '2px solid #C4762E' }}>
@@ -611,7 +621,7 @@ export default function App() {
                 onMouseEnter={() => setHoveredGallery(i)}
                 onMouseLeave={() => setHoveredGallery(null)}
               >
-                <img src={item.img} alt={item.caption} className="w-full h-full object-cover transition-transform duration-500" style={{ transform: hoveredGallery === i ? 'scale(1.05)' : 'scale(1)' }} loading="lazy" />
+                <img src={item.img} srcSet={srcSetFor(item.img)} sizes="(max-width: 768px) 50vw, 33vw" alt={item.caption} className="w-full h-full object-cover transition-transform duration-500" style={{ transform: hoveredGallery === i ? 'scale(1.05)' : 'scale(1)' }} loading="lazy" decoding="async" />
                 <div
                   className="absolute inset-0 flex items-end p-4 transition-opacity duration-300"
                   style={{ background: 'linear-gradient(to top, #201F19dd, transparent 55%)', opacity: hoveredGallery === i ? 1 : 0.85 }}
