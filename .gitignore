@@ -4,3 +4,4 @@ dist
 *.log
 .vercel
 package-lock.json
+dist-ssr
