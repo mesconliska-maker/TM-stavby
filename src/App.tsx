@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-const HERO_IMG = '/fotky/hero-menzi-muck-jizera.jpg'
-const RIVERBED_IMG = '/fotky/koryto-cisteni-reky.jpg'
-const ABOUT_IMG = '/fotky/o-mne-tomas-martinec-technika.jpg'
+const HERO_IMG = '/fotky/hero-menzi-muck-jizera.webp'
+const RIVERBED_IMG = '/fotky/koryto-cisteni-reky.webp'
+const ABOUT_IMG = '/fotky/o-mne-tomas-martinec-technika.webp'
 const CONTACT_EMAIL = 'tmstavby@seznam.cz'
 const ADDRESS_QUERY = 'Na+V%C3%A1pence+765,+468+22+%C5%BDelezn%C3%BD+Brod'
 const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${ADDRESS_QUERY}`
@@ -10,19 +10,19 @@ const MAPS_EMBED = `https://www.google.com/maps?q=${ADDRESS_QUERY}&z=14&output=e
 
 const machines = [
   {
-    img: '/fotky/technika-menzi-muck-a61.jpg',
+    img: '/fotky/technika-menzi-muck-a61.webp',
     name: 'Menzi Muck A61',
     type: 'Kráčivé rypadlo',
     desc: 'Rypadlo pro svahy, koryta řek a místa, kam se běžná technika nedostane. Pracuje ve vodě, na strmém svahu i v úzkém profilu.',
   },
   {
-    img: '/fotky/technika-sany-sy50u.jpg',
+    img: '/fotky/technika-sany-sy50u.webp',
     name: 'Sany SY50U',
     type: 'Minirypadlo',
     desc: 'Kompaktní pásové minirypadlo pro výkopy základů, přípojek a inženýrských sítí i ve stísněných prostorech u domu.',
   },
   {
-    img: '/fotky/technika-freza-na-skalu.jpg',
+    img: '/fotky/technika-freza-na-skalu.webp',
     name: 'Skalní fréza a drapák',
     type: 'Příslušenství',
     desc: 'Frézování skály a betonu bez trhacích prací, drapák na skládání kamenných zdí a manipulaci s kamenem.',
@@ -104,22 +104,64 @@ const services = [
 ]
 
 const galleryItems = [
-  { img: '/fotky/realizace-cisteni-koryta-reky.jpg', caption: 'Čištění koryta řeky' },
-  { img: '/fotky/realizace-kamenna-operna-zed.jpg', caption: 'Kamenná opěrná zeď' },
-  { img: '/fotky/realizace-vykop-site-podel-silnice.jpg', caption: 'Výkop pro inženýrské sítě podél silnice' },
-  { img: '/fotky/realizace-cisteni-rybnika.jpg', caption: 'Odbahnění rybníka' },
-  { img: '/fotky/realizace-skladana-kamenna-zed.jpg', caption: 'Skládaná kamenná zeď u cesty' },
-  { img: '/fotky/realizace-frezovani-skaly.jpg', caption: 'Frézování skály v příkopu' },
-  { img: '/fotky/realizace-svah-nad-silnici.jpg', caption: 'Terénní úpravy svahu nad silnicí' },
-  { img: '/fotky/realizace-operna-zed-bloky.jpg', caption: 'Opěrná zeď z kamenných bloků' },
-  { img: '/fotky/realizace-pokladka-potrubi.jpg', caption: 'Pokládka potrubí' },
-  { img: '/fotky/realizace-vycistene-koryto-potoka.jpg', caption: 'Vyčištěné koryto potoka' },
-  { img: '/fotky/realizace-zajisteni-svahu.jpg', caption: 'Zajištění svahu' },
-  { img: '/fotky/realizace-nakladka-zeminy.jpg', caption: 'Nakládka zeminy' },
-  { img: '/fotky/realizace-kamenna-zed-drapak.jpg', caption: 'Stavba kamenné zdi drapákem' },
-  { img: '/fotky/realizace-uprava-brehu.jpg', caption: 'Úprava břehu' },
-  { img: '/fotky/technika-menzi-muck-a61-svah.jpg', caption: 'Menzi Muck na svahu' },
+  { img: '/fotky/realizace-cisteni-koryta-reky.webp', caption: 'Čištění koryta řeky' },
+  { img: '/fotky/realizace-kamenna-operna-zed.webp', caption: 'Kamenná opěrná zeď' },
+  { img: '/fotky/realizace-vykop-site-podel-silnice.webp', caption: 'Výkop pro inženýrské sítě podél silnice' },
+  { img: '/fotky/realizace-cisteni-rybnika.webp', caption: 'Odbahnění rybníka' },
+  { img: '/fotky/realizace-skladana-kamenna-zed.webp', caption: 'Skládaná kamenná zeď u cesty' },
+  { img: '/fotky/realizace-frezovani-skaly.webp', caption: 'Frézování skály v příkopu' },
+  { img: '/fotky/realizace-svah-nad-silnici.webp', caption: 'Terénní úpravy svahu nad silnicí' },
+  { img: '/fotky/realizace-operna-zed-bloky.webp', caption: 'Opěrná zeď z kamenných bloků' },
+  { img: '/fotky/realizace-pokladka-potrubi.webp', caption: 'Pokládka potrubí' },
+  { img: '/fotky/realizace-vycistene-koryto-potoka.webp', caption: 'Vyčištěné koryto potoka' },
+  { img: '/fotky/realizace-zajisteni-svahu.webp', caption: 'Zajištění svahu' },
+  { img: '/fotky/realizace-nakladka-zeminy.webp', caption: 'Nakládka zeminy' },
+  { img: '/fotky/realizace-kamenna-zed-drapak.webp', caption: 'Stavba kamenné zdi drapákem' },
+  { img: '/fotky/realizace-uprava-brehu.webp', caption: 'Úprava břehu' },
+  { img: '/fotky/technika-menzi-muck-a61-svah.webp', caption: 'Menzi Muck na svahu' },
 ]
+
+const regions = [
+  'Železný Brod', 'Semily', 'Jablonec nad Nisou', 'Turnov', 'Tanvald', 'Liberec',
+  'Jilemnice', 'Lomnice nad Popelkou', 'Malá Skála', 'Jizerské hory', 'Český ráj', 'Krkonoše',
+]
+
+const faq = [
+  {
+    q: 'Jak rychle dokážete přijet?',
+    a: 'U havárií zpravidla tentýž den, kdykoliv včetně noci a víkendů. Zavolejte na 737 846 426 a řeknu vám rovnou, kdy můžu být na místě.',
+  },
+  {
+    q: 'Kolik stojí zemní práce?',
+    a: 'Cena závisí na druhu práce, terénu a rozsahu. Po telefonu nebo po prohlídce místa dostanete nezávaznou cenovou nabídku bez skrytých položek.',
+  },
+  {
+    q: 'Kde všude pracujete?',
+    a: 'Sídlím v Železném Brodě a pokrývám celý Liberecký kraj: Semily, Jablonec nad Nisou, Turnov, Tanvald, Liberec, Jilemnice a okolí Jizerských hor a Českého ráje.',
+  },
+  {
+    q: 'Dostane se vaše technika i do svahu nebo do vody?',
+    a: 'Ano. Kráčivé rypadlo Menzi Muck A61 pracuje ve strmém svahu, v korytě řeky i v bahně rybníka. Minirypadlo Sany SY50U se vejde na zahradu i do stísněných míst u domu.',
+  },
+  {
+    q: 'Děláte i malé zakázky pro soukromníky?',
+    a: 'Ano. Výkop pro přípojku nebo jímku, srovnání zahrady, vyčištění příkopu nebo naložení palety jsou běžné zakázky. Nemusíte mít velkou stavbu.',
+  },
+  {
+    q: 'Umíte i bourání a odvoz suti?',
+    a: 'Ano, demolice menších staveb, základů a zdí včetně odvozu suti. Skalní frézou zvládnu i skálu a beton bez trhacích prací.',
+  },
+]
+
+const faqJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+})
 
 /** Brand mark: excavator over water — earth and river work from one firm. Same geometry as /public/logo-mark.svg. */
 function LogoMark({ size = 36 }: { size?: number }) {
@@ -170,12 +212,12 @@ export default function App() {
       <header className="fixed top-0 left-0 right-0 z-50" style={{ background: '#201F19ee', backdropFilter: 'blur(8px)', borderBottom: '1px solid #EFEDE411' }}>
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
           {/* Logo */}
-          <a href="#" aria-label="TM Stavby – domů">
+          <a href="#" title="TM Stavby – domů">
             <Logo />
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Hlavní navigace">
             {[
               ['Zemní práce', '#sluzby'],
               ['Koryta řek', '#reka'],
@@ -221,13 +263,16 @@ export default function App() {
         )}
       </header>
 
+      <main>
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ paddingTop: 64 }}>
         <div className="absolute inset-0" style={{ background: '#201F19' }}>
           <img
             src={HERO_IMG}
-            alt="Kráčivé rypadlo Menzi Muck při čištění koryta Jizery"
+            alt="Kráčivé rypadlo Menzi Muck při čištění koryta Jizery v Železném Brodě"
             className="w-full h-full object-cover opacity-50"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #201F19bb 0%, #201F1944 40%, #201F19cc 100%)' }} />
         </div>
@@ -346,7 +391,7 @@ export default function App() {
           </div>
 
           <div className="mt-12 pt-8" style={{ borderTop: '1px solid #EFEDE415' }}>
-            <p className="text-sm italic" style={{ color: '#EFEDE466' }}>
+            <p className="text-sm italic" style={{ color: '#EFEDE4aa' }}>
               Máte zakázku, která tu není? Zavolejte — pokud mám techniku a čas, vezmu to.
             </p>
           </div>
@@ -358,16 +403,16 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-6 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="eyebrow mb-4" style={{ color: '#F4F2E9aa', letterSpacing: '0.18em', fontSize: '0.7rem', fontFamily: 'Archivo, sans-serif', fontWeight: 700, textTransform: 'uppercase' }}>
+              <div className="eyebrow mb-4" style={{ color: '#F4F2E9', letterSpacing: '0.18em', fontSize: '0.7rem', fontFamily: 'Archivo, sans-serif', fontWeight: 700, textTransform: 'uppercase' }}>
                 ČIŠTĚNÍ KORYT ŘEK A RYBNÍKŮ
               </div>
               <h2 className="mb-6" style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 900, fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', color: '#F4F2E9', lineHeight: 1.15 }}>
                 Vybírání koryt řek,<br />rybníků a náhonů
               </h2>
-              <p className="mb-6 leading-relaxed" style={{ color: '#F4F2E9cc', fontSize: '1.05rem' }}>
+              <p className="mb-6 leading-relaxed" style={{ color: '#F4F2E9ee', fontSize: '1.05rem' }}>
                 Žiji a pracuji přímo na Jizeře — čištění koryt je zakázka, které rozumím terénně i technicky. Odstraňuji sedimenty, nánosy a porost z říčních koryt, rybníků a mlýnských náhonů v celém Libereckém kraji.
               </p>
-              <p className="mb-8 leading-relaxed" style={{ color: '#F4F2E9bb', fontSize: '1rem' }}>
+              <p className="mb-8 leading-relaxed" style={{ color: '#F4F2E9ee', fontSize: '1rem' }}>
                 Železný Brod stojí přímo na Jizeře od roku 1352. Práce na vodních tocích tu není výjimka — je to každodenní realita.
               </p>
               <a href="tel:737846426" className="inline-flex items-center gap-3 px-6 py-3 rounded font-bold transition-all hover:brightness-110" style={{ background: '#F4F2E9', color: '#2E6B7A', fontFamily: 'Archivo, sans-serif' }}>
@@ -388,7 +433,7 @@ export default function App() {
                 <div className="absolute inset-0 rounded-xl" style={{ background: 'linear-gradient(to top, #2E6B7Acc 0%, transparent 50%)' }} />
               </div>
               <div className="absolute -bottom-4 -left-4 px-4 py-3 rounded-lg" style={{ background: '#245869', border: '1px solid #F4F2E920' }}>
-                <div className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#F4F2E988' }}>Specialita</div>
+                <div className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#F4F2E9dd' }}>Specialita</div>
                 <div className="font-bold" style={{ fontFamily: 'Archivo, sans-serif', color: '#F4F2E9' }}>Jizera a okolí</div>
               </div>
             </div>
@@ -399,7 +444,7 @@ export default function App() {
       {/* SERVICES GRID */}
       <section id="sluzby" style={{ background: '#F4F2E9', color: '#1E1D17' }}>
         <div className="max-w-6xl mx-auto px-6 py-24">
-          <div className="eyebrow mb-4" style={{ color: '#C4762E' }}>ZEMNÍ PRÁCE</div>
+          <div className="eyebrow mb-4" style={{ color: '#A05C1C' }}>ZEMNÍ PRÁCE</div>
           <h2 className="mb-16" style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 900, fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#1E1D17' }}>
             Od výkopu po demolici
           </h2>
@@ -495,7 +540,7 @@ export default function App() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="eyebrow mb-4" style={{ color: '#C4762E' }}>O MNĚ</div>
+              <div className="eyebrow mb-4" style={{ color: '#A05C1C' }}>O MNĚ</div>
               <h2 className="mb-6" style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 900, fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', color: '#1E1D17' }}>
                 Tomáš Martinec —<br />osobně a vlastní technikou
               </h2>
@@ -521,6 +566,30 @@ export default function App() {
                   {CONTACT_EMAIL}
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REGIONS */}
+      <section id="kde-pusobim" style={{ background: '#2E6B7A', color: '#F4F2E9' }}>
+        <div className="max-w-6xl mx-auto px-6 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
+            <div>
+              <div className="eyebrow mb-3" style={{ color: '#F4F2E9' }}>KDE PŮSOBÍM</div>
+              <h2 className="mb-3" style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 900, fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: '#F4F2E9', lineHeight: 1.15 }}>
+                Zemní práce v Železném Brodě<br />a celém Libereckém kraji
+              </h2>
+              <p className="leading-relaxed" style={{ color: '#F4F2E9ee', fontSize: '1rem' }}>
+                Domácí terén jsou Jizerské hory a Český ráj. Za zajímavou zakázkou vyjedu kamkoliv v kraji.
+              </p>
+            </div>
+            <div className="lg:col-span-2 flex flex-wrap gap-2">
+              {regions.map((r) => (
+                <span key={r} className="px-4 py-2 rounded-full text-sm font-semibold" style={{ background: '#F4F2E915', border: '1px solid #F4F2E930', color: '#F4F2E9', fontFamily: 'Archivo, sans-serif' }}>
+                  {r}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -555,10 +624,32 @@ export default function App() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" style={{ background: '#201F19' }}>
+        <div className="max-w-6xl mx-auto px-6 py-24">
+          <div className="eyebrow mb-4" style={{ color: '#C4762E' }}>ČASTÉ DOTAZY</div>
+          <h2 className="mb-12" style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 900, fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#EFEDE4' }}>
+            Na co se lidé ptají
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {faq.map((f) => (
+              <details key={f.q} className="group rounded-xl" style={{ background: '#EFEDE408', border: '1px solid #C4762E30' }}>
+                <summary className="cursor-pointer list-none flex items-center justify-between gap-4 px-6 py-5 font-bold" style={{ fontFamily: 'Archivo, sans-serif', color: '#EFEDE4', fontSize: '1.05rem' }}>
+                  <span>{f.q}</span>
+                  <span className="flex-shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" style={{ color: '#C4762E' }} aria-hidden="true">+</span>
+                </summary>
+                <p className="px-6 pb-6 leading-relaxed" style={{ color: '#EFEDE4bb', fontSize: '0.97rem' }}>{f.a}</p>
+              </details>
+            ))}
+          </div>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="kontakt" style={{ background: '#F4F2E9', color: '#1E1D17' }}>
         <div className="max-w-6xl mx-auto px-6 py-24">
-          <div className="eyebrow mb-4" style={{ color: '#C4762E' }}>KONTAKT</div>
+          <div className="eyebrow mb-4" style={{ color: '#A05C1C' }}>KONTAKT</div>
           <h2 className="mb-4" style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 900, fontSize: 'clamp(1.8rem, 4vw, 3rem)', color: '#1E1D17', maxWidth: 700 }}>
             Potřebujete vykopat, vyčistit nebo zbourat —<br />
             <span style={{ color: '#C4762E' }}>kdykoliv?</span>
@@ -681,6 +772,8 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      </main>
 
       {/* FOOTER */}
       <footer style={{ background: '#161510', color: '#EFEDE4', borderTop: '1px solid #EFEDE411' }}>
